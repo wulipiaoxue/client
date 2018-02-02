@@ -1,0 +1,44 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.0",
+	"appid": "wx771012486391bcee",
+	"projectname": "%E5%8C%85%E4%BD%A0%E8%AF%B4",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "提示",
+					"pathName": "pages/mytip/mytip",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "抢",
+					"pathName": "pages/redpacket/redpacket",
+					"query": ""
+				}
+			]
+		}
+	}
+}

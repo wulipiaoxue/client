@@ -1,0 +1,79 @@
+@import "../message-template/message-template.wxss";
+.send-container {
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.user-icon {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 20rpx;
+  border-radius: 80rpx;
+}
+
+.user-info{
+  display: flex;
+  flex-direction: row;
+  justify-content:  center;
+  margin-bottom: 35rpx;
+
+}
+
+.user-info text{
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+.user-name{
+ color: #afb9c3;
+ margin-right: 20rpx;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  justify-content:  center;
+  margin-bottom: 50rpx;
+
+}
+
+.info-money{
+  display: flex;
+  flex-direction: column;
+  margin-right: 50rpx;
+}
+.info-money-title{
+  font-size: 27rpx;
+  color: #aaaaaa;
+  margin-bottom: 15rpx;
+}
+.info-money-num{
+  font-weight: 600;
+  font-size: 28rpx;
+}
+
+.info-num{
+  display: flex;
+  flex-direction: column;
+}
+.info-num-title{
+  font-size: 27rpx;
+  color: #aaaaaa;
+  margin-bottom: 15rpx;
+}
+.info-num-num{
+   font-weight: 600;
+  font-size: 28rpx;
+}
+
+
+
+
+.send-list {
+  margin-bottom: 50px;
+}
+
+.almost-question {
+  position: relative;
+  bottom:60rpx;
+  color: #697b9f;
+}

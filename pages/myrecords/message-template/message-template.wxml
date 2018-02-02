@@ -1,0 +1,16 @@
+<template name="message">
+  <view class='message-container2'>
+    <view class='message-left2'>
+      <image wx:if="{{ !isSend }}" class='mesaage-img' src='{{  avatarUrlOfFolder }}'/>
+      <view class='message-left-text'> 
+        <text class='message-title'>{{isSend? commond :nickNameOfFolder}}</text>
+        <text class='message-time'>{{ createtime }}</text>
+      </view>
+    </view> 
+    <view class='message-right-text'>
+        <text class='message-money-sum'>{{amountYuan}}元</text>
+        <text wx:if="{{ isSend && state !='3' }}" class='message-date-sum'>{{numberLeft=="0"? '已抢光' : '剩余'+numberLeft+'个未领取'}}</text>
+        <text wx:if="{{ isSend && state =='3' }}" class='message-date-sum'>已失效</text>
+    </view>
+  </view>
+</template>

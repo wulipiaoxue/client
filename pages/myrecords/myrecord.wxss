@@ -1,0 +1,75 @@
+@import "send-template/send-template.wxss";
+.record-container{
+  /* display: flex;
+  flex-direction: column;
+  height: 100%; */
+}
+.swiper-tab{
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 44px;
+  justify-content:  space-around;
+  
+}
+.swiper-send{
+  line-height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.text-send{
+  font-size: 16px;
+}
+.text-send2{
+  font-size: 16px;
+  color: #bbbbbb;
+}
+
+.line-send{
+  height: 3px;
+  background-color: red;
+  width: 45px;
+  margin: 0 auto;
+}
+.line-send2{
+  height: 3px;
+  background-color: #fff;
+  width: 45px;
+  margin: 0 auto;
+}
+.swiper-receive{
+  line-height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-receive{
+  font-size: 16px;
+}
+.text-receive2{
+  font-size: 16px;
+  color: #bbbbbb;
+}
+
+.line-receive{
+  height: 3px;
+  background-color: red;
+  width: 45px;
+  margin: 0 auto;
+}
+.line-receive2{
+  height: 3px;
+  background-color: #fff;
+  width: 45px;
+  margin: 0 auto;
+}
+
+swiper{
+  margin-top: 44px;
+  
+}

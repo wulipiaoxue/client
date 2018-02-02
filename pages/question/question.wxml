@@ -1,0 +1,8 @@
+<import src="question-template/question-template.wxml" />
+<view class='question-container'>
+  <block wx:for="{{questions}}" wx:for-item="item" wx:for-index="idx">
+    <view class='question-item' data-id="{{idx}}" catchtap='questionsTap'>
+      <template is="question-item" data='{{...item,isOpen:currentPos===idx?0:1}}' />
+    </view>
+  </block>
+</view>

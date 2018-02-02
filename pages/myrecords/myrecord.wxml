@@ -1,0 +1,28 @@
+<import src="send-template/send-template.wxml"/>
+<view class='record-container'>
+  <view class='swiper-tab'>
+      <view class='swiper-send' catchtap='onSendCurrent' data-pos='0'>
+        <text class="{{currentTab===0?'text-send':'text-send2'}}">我发出的</text>
+        <view class="{{currentTab===0?'line-send':'texline-send2'}}"></view>
+      </view>
+
+      <view class='swiper-receive' catchtap='onSendCurrent' data-pos='1'>
+        <text class="{{currentTab===1?'text-receive':'text-receive2'}}">我收到的</text>
+        <view class="{{currentTab===1?'line-receive':'line-receive2'}}"></view>
+      </view>
+
+
+  </view>
+
+  <swiper style='height:{{swiperHeight}}px' bindchange='bindChange' current="{{currentTab}}">
+     <swiper-item>
+        <template is="send-template" data="{{scrollH:swiperHeight,...userInfo,...mySendData,isSend:true}}"/>
+     </swiper-item>
+
+     <swiper-item>
+        <template is="send-template" data="{{scrollH:swiperHeight,...userInfo,...myGetData,isSend:false}}"/>
+     </swiper-item>
+
+  </swiper>
+
+</view>

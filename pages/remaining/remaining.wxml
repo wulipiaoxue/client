@@ -1,0 +1,31 @@
+<view class='remaining-container'>
+  <view class="tip">
+    <text wx:if="{{tipTxt}}">{{tipTxt}}</text>
+  </view>
+  <view class='remaining-content'>
+    <view class='remaining-account'>
+      <text class='remaining-accout-title'>账户余额</text>
+      <text class='remaining-accout-sum'>{{balance}}元</text>
+    </view>
+    <text class='remaining-title2'>提现金额</text>
+    <view class='remaining-input'>
+      <text>￥</text>
+      <input type='digit' value='{{money}}' bindinput='meyInput'></input>
+    </view>
+   
+    <text>提现到微信钱包，</text>
+    <text class='text-all' bindtap="all">全部提现</text>
+    <view wx:if="{{rateAfter}}" class="walet">
+      <text>服务费：<text class="red-color">{{fate}}</text></text>
+      <text class="getTxt">到账金额：<text class="red-color">{{getMoney}}</text></text>
+    </view>
+    <button class='remaining-submit' disabled='{{disabled}}' bindtap='sendCmd'>提现</button> 
+    <view class='remaining-message2'>1-5个工作日到账</view>
+  </view>
+  <view class="advert remain-advert" catchtap='intoChtfund'>
+    <image src="https://s.chtfund.com//upload/htmall/images/content/82c8379b-c9ce-4f5c-a6ff-32b69ff6cab0.jpg"></image>
+  </view> 
+  <view class='remaining-message3'>
+    <text bindtap='question'>常见问题</text>
+  </view>
+</view>

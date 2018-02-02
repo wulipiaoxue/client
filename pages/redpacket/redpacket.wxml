@@ -1,0 +1,75 @@
+<import src="comment-template/comment-template.wxml" />
+<view class='redpacket-container'>
+  <view class='redpacket-content'>
+    <image class="logo" src="/images/icon/logo.png"></image>
+    <image class='redicon' src="{{ detail_info.ownerAvatarUrl }}"></image>
+
+    <text class='red-name'>{{detail_info.ownerNickName}}</text>
+    <view class='red-title-container'>
+        <view wx:if="{{isBegin}}" class="voice-icon">
+          <image src='/images/icon/voice.gif'/>
+        </view>
+        <image class='red-title-img' src='/images/icon/mkf.png'/>
+        <text class='red-title'>{{ detail_info.commond }}</text>
+    </view>
+    <view class="voice-box">
+      <text wx:if="{{ introTxt }}" class='red-sum'>{{introTxt}}元</text>
+      <button wx:if="{{ (state == 2)&& grab }}" bindtouchend="voiceEndRecord" bindtouchstart="voiceStartRecord" class='bt-submit'>按住说出以上口令领取赏金</button>
+      <text wx:if="{{ none }}" class='red-sum'>您来晚了，红包已经领完了</text>
+      <text wx:if="{{ state == 3 }}" class='red-sum'>红包已经过期了</text>
+      <view wx:if="{{ (state == 2)&& grab }}" class="yue" catchtap='replace'>
+          <image class='red-title-img' src='{{select?"/images/icon/selected.png":"/images/icon/unselect.png"}}'/>
+          <text class='red-title'>勾选这里可以讲粤语喔！</text>
+      </view> 
+    </view>
+    <view class='red-action-container' catchtap='inCash'>
+      <view class='red-action-enchashment'>
+        <image src='/images/icon/dollars.png'></image>
+        <text>去提现</text>
+      </view>
+      <view class='red-action-enchashment' catchtap='distributeRedPacket'>
+        <image src='/images/icon/redpacket.png'></image>
+        <text>再发一个</text>
+      </view>
+
+      <view class='red-action-enchashment' catchtap='ToShare'>
+        <image src='/images/icon/share.png'></image>
+        <text>去转发</text>
+      </view>
+    </view>
+  </view>
+  <view class='red-below-container'>
+    <view class='red-below-container-title'>
+      <text wx:if="{{detail_info.numberLeft == 0}}">共{{detail_info.amount}}元，</text><text>已领取{{(detail_info.number-detail_info.numberLeft)||0}}/{{detail_info.number}}个</text>
+    </view>
+
+    <view class='red-below-container-list'>
+      <block wx:for="{{detail_info.list}}" wx:for-item="item" wx:for-index="idx" wx:key="receive_id">
+        <view class='red-comment-item'>
+          <image class='comment-item-img' src='{{ item.avatarUrl }}'></image>
+          <view class='comment-item-right-block'>
+            <text class='comment-item-name'>{{item.nickName}}</text>
+            <view class='comment-item-below'>
+              <view class='comment-item-voice' bindtap="playVoice"
+                data-voicepath="https://s.haomaojf.com/upload/voice/{{item.passCommond}}"
+                data-voiceidx="{{idx}}"
+            >
+                {{isPlayidx==idx?"播放中":item.duration}}
+            </view>
+              <view class='comment-item-message'>
+                <text class='comment-item-price'> {{item.amountYuan}}元</text>
+                <text class='comment-item-date'>{{item.updateTime}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <navigator url="/pages/myrecords/myrecord" class='red-below-container-line' hover-class='none'>
+        <!-- <view class='line'></view>
+        <view class='line'></view> -->
+        查看我的记录
+      </navigator>
+    </view>
+    <text class="repacketIntro">未领取的金额，将于24小时后退至余额</text>
+  </view>
+</view>

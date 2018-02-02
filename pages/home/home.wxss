@@ -1,0 +1,218 @@
+/* page{
+  background-color: #f2f2f2;   
+} */
+
+.home-container {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.home-content {
+  text-align: center;
+  background-color: #fff;
+  width: 85%;
+  margin: 0 auto;
+  padding: 30rpx;
+  border-radius: 10px;
+}
+.wx-card{
+  width:90%;
+  margin:0 auto;
+  height:630rpx;
+  background-color:#fff;
+  padding:0 60rpx;
+  box-sizing: border-box;
+  border-radius: 5rpx;
+  box-shadow: 2rpx 0rpx 30rpx #aaa;
+}
+.card-head{
+  position: relative;
+  width: 100%;
+  height: 130rpx;
+}
+.image-box{
+  width: 140rpx;
+  height: 140rpx;
+  background-color: #fff;
+  border:1px solid transparent;
+  border-radius: 50%;
+  margin:0 auto;
+  position: relative;
+  top:-50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tip{
+  font-size:30rpx;
+  background-color:#eb9c9c;
+  height:50rpx;
+  line-height: 50rpx;
+  color:#fff;
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.home-user-icon {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 20px;
+  border-radius: 50rpx;
+}
+
+.commands {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+}
+
+.commands text {
+  margin-top: 6rpx;
+  font-size: 30rpx;
+}
+
+.input-command {
+  width: 450rpx;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.messages {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25rpx;
+}
+
+.text-message {
+  color: #888;
+  margin: 10rpx 4rpx 10rpx 18rpx;
+}
+
+.text-message-img {
+  width: 25rpx;
+  height: 25rpx;
+  margin-top: 15rpx;
+}
+
+.moneys {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+}
+
+.moneys text {
+  margin-top: 6rpx;
+  font-size: 30rpx;
+}
+
+.input-money {
+  width: 450rpx;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.nums {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 50rpx;
+}
+
+.nums text {
+  margin-top: 6rpx;
+  font-size: 30rpx;
+}
+
+.input-num {
+  width: 450rpx;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.text-message2 {
+  color: #888;
+}
+
+/* .home-submit {
+  margin: 20rpx auto;
+  width: 80%;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 30px;
+  padding: 5px;
+  background-color: #db5943;
+  color: white;
+  font-size: 30rpx;
+} */
+
+.bt-submit {
+  border-radius: 15px;
+  margin: 20rpx auto;
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #db5943;
+  color: white;
+  font-size: 30rpx;
+}
+
+.text-message3 {
+  font-size: 12px;
+  line-height: 40px;
+  color: #70788d;
+}
+
+.home-bts {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  background-color: #fff;
+  position: fixed;
+  padding: 5rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: space-around;
+}
+
+.bt-records {
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-records image {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 auto;
+}
+
+.bt-money {
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-money image {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 auto;
+}
+
+.bt-question {
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-question image {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 auto;
+}

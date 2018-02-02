@@ -1,0 +1,15 @@
+@import "question-template/question-template.wxss";
+.question-container{
+  padding: 30rpx;
+
+}
+
+.question-item{
+  margin-bottom: 17rpx;
+}
+
+.bt-submit{
+  margin-top: 50rpx;
+  background-color: #1aac19;
+  color: #fff;
+}

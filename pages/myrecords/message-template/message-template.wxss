@@ -1,0 +1,51 @@
+.message-container2 {
+  background-color: #fff;
+  font-size: 30rpx;
+  padding: 17rpx 23rpx 17rpx 23rpx;
+  margin-bottom: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.message-left2{
+  display: flex;
+  flex-direction: row;
+}
+.mesaage-img{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 10rpx;
+  border-radius: 8rpx;
+}
+.message-left-text{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+}
+.message-title{
+  color: #4c4c4c;
+  font-size: 30rpx;
+}
+.message-time{
+  color: #b8b8b8;
+  font-size: 28rpx;
+}
+.message-right-text{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: space-between;
+}
+
+.message-money-sum {
+  font-weight: 600;
+  font-size: 30rpx;
+}
+.message-date-sum{
+  color: #b8b8b8;
+  font-size: 28rpx;
+}
+
+
+

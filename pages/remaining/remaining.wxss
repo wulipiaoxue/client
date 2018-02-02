@@ -1,0 +1,147 @@
+.page {
+  height: 100%;
+}
+
+.remaining-container {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.text-contact {
+  width: 100%;
+  color: #697b9f;
+  text-align: right;
+  font-size: 28rpx;
+  padding: 20rpx 25rpx 0 0;
+}
+
+.remaining-content {
+  width: 88%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 38rpx;
+}
+
+.remaining-account {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 60rpx;
+}
+
+.remaining-accout-title {
+  font-size: 31rpx;
+  color: #505050;
+  margin-right: 120rpx;
+  vertical-align: middle;
+  line-height: 50rpx;
+}
+
+.remaining-accout-sum {
+  line-height: 50rpx;
+  color: #b8b8b8;
+  font-size: 45rpx;
+  vertical-align: middle;
+}
+
+.remaining-title2 {
+  font-size: 31rpx;
+  color: #505050;
+  line-height: 50rpx;
+}
+
+.remaining-input {
+  margin-top: 45rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #b8b8b8;
+}
+
+.remaining-input text {
+  font-weight: 600;
+  font-size: 55rpx;
+  margin-right: 60rpx;
+  display: flex;
+  align-items: center;
+}
+
+.remaining-input input {
+  line-height: 80rpx;
+  font-size: 70rpx;
+  font-weight: 600;
+  height: 90rpx;
+}
+
+.remaining-message1 {
+  font-size: 27rpx;
+  color: #b8b8b8;
+}
+
+.text-all {
+  font-size: 27rpx;
+  color: #697b9f;
+}
+
+.remaining-submit {
+  background-color: #1aad19;
+  width: 100%;
+  text-align: center;
+  height: 80rpx;
+  border-radius: 15rpx;
+  color: #fff;
+  line-height: 80rpx;
+  margin-top: 30rpx;
+  font-size: 35rpx;
+}
+
+.remaining-message2 {
+  width: 100%;
+  font-size: 25rpx;
+  text-align: center;
+  color: #b8b8b8;
+  line-height: 80rpx;
+}
+
+.remaining-message3 {
+  color: #697b9f;
+  /* position: absolute;
+  bottom: 0; */
+  position: fixed;
+  bottom: 0;
+ left:0;
+  width: 100%;
+  font-size: 25rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.red-color{
+  color:#db5943;
+}
+.getTxt{
+  margin-left:30rpx;
+}
+.tip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:60rpx;
+}
+.tip text{
+  font-size: 28rpx;
+  background-color:#dd6044;
+  display: block;
+  width:90%;
+  height:50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color:white;
+  border-radius: 10rpx;
+}
+.remain-advert{
+  padding:0;
+  margin-top:30rpx;
+}
+/* button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  color:#fff;
+  background-color:rgba(27,237,121,0.8);
+} */
