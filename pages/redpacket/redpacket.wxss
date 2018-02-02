@@ -1,6 +1,6 @@
 @import "comment-template/comment-template.wxss";
 
-page {
+/* page {
   background-color: #fafeff;
 }
 .redpacket-container {
@@ -25,26 +25,26 @@ page {
   height: 200rpx;
   margin: 20rpx auto;
   border-radius: 100rpx;
-}
+} */
 
-.red-name {
+/* .red-name {
   color: #ebcb95;
   font-size: 35rpx;
   margin-bottom: 25rpx;
-}
-.red-title-container{
+} */
+/* .red-title-container{
    margin-bottom: 50rpx;
    display: flex;
    flex-direction: row;
    justify-content: center;
    position: relative;
-}
+} */
 
-.red-title {
+/* .red-title {
   color: #ebcb95;
   font-size: 40rpx;
   line-height: 45rpx;
-}
+} */
 .voice-icon{
   width:140rpx;
   height:140rpx;
@@ -64,11 +64,11 @@ page {
   width:80rpx;
   height:80rpx;
 }
-.red-title-img{
+/* .red-title-img{
   width: 45rpx;
   height: 45rpx;
   margin-right: 15rpx;
-}
+} */
 .red-sum {
   display: block;
   color: #ebcb95;
@@ -231,4 +231,114 @@ page {
 }
 .yue .red-title{
   font-size: 34rpx;
+}
+
+/* 1.0版本样式控制 */
+page {
+  background-color: #fafeff;
+}
+image {
+  display:inline-block;
+}
+
+.redpacket-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.redpacket-content {
+  background-color: #dd6044;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width:750rpx;
+  height:820rpx;
+}
+.bg{
+  width:750rpx;
+  height:820rpx;
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.head{
+  width:750rpx;
+  height:244rpx;
+  z-index:1;
+  position: absolute;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head-bg{
+  width:750rpx;
+  height:244rpx;
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.logo{
+  position: absolute;
+  top:0;
+  width:200rpx;
+  height:54rpx;
+  z-index:1;
+}
+.ava{
+  width:262rpx;
+  height:262rpx;
+  position: absolute;
+  top:60rpx;
+  z-index:2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle{
+  width:262rpx;
+  height:262rpx;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.redicon {
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 78rpx;
+  z-index: 2;
+  position: relative;
+  top:3rpx;
+  left:2rpx;
+}
+.red-name {
+  position: absolute;
+  bottom:-50rpx;
+  color: #ffd5a5;
+  font-size: 34rpx;
+}
+.red-title-container{
+   margin-top: 36rpx;
+   margin-bottom: 30rpx;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}
+.red-title-img{
+  width: 48rpx;
+  height: 52rpx;
+  margin-right: 15rpx;
+}
+.red-title{
+  font-size: 39rpx;
+  color:#ffd5a5;
 }

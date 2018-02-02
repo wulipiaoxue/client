@@ -1,7 +1,25 @@
 <import src="comment-template/comment-template.wxml" />
 <view class='redpacket-container'>
   <view class='redpacket-content'>
-    <image class="logo" src="/images/icon/logo.png"></image>
+    <image class="bg" src="/images/icon/bg.png"></image>
+    <view class="head">
+       <image class="head-bg" src="/images/icon/head.png"></image>
+       <image class="logo" src="/images/icon/logo2.png"></image>
+    </view>
+    <view class="ava">
+      <image class="circle" src="/images/icon/circle.png"></image>
+      <image class='redicon' src="{{ detail_info.ownerAvatarUrl }}"></image>
+      <text class='red-name'>{{detail_info.ownerNickName}}</text>
+    </view>
+    <view class="red-title-container">
+      <image class='red-title-img' src='/images/icon/mkf2.png'/>
+      <text class='red-title'>{{ detail_info.commond }}</text>
+    </view>
+    <view class="red-voice">
+      <image src="/images/icon/voice2.png"></image>
+      <text></text>
+    </view>
+    <!-- <image class="logo" src="/images/icon/logo.png"></image>
     <image class='redicon' src="{{ detail_info.ownerAvatarUrl }}"></image>
 
     <text class='red-name'>{{detail_info.ownerNickName}}</text>
@@ -36,7 +54,7 @@
         <image src='/images/icon/share.png'></image>
         <text>去转发</text>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class='red-below-container'>
     <view class='red-below-container-title'>
