@@ -85,7 +85,7 @@ Page({
       data: {
         hmac:"",
         params:{
-          "id": that.data.packet_id || 8,
+          "id": that.data.packet_id || 30,
           "wx3rdSession": wx.getStorageSync("wx3rdSession"), 
         }
       },
@@ -124,7 +124,7 @@ Page({
             data: {
               hmac: "",
               params: {
-                "folderid": that.data.packet_id,
+                "folderid": that.data.packet_id||30,
                 curPage: "1",// 当前页码 
                 pageSize: "2",//每页显示条数    
                 "wx3rdSession": wx.getStorageSync("wx3rdSession"),
@@ -275,23 +275,27 @@ Page({
   },
   restartRecord(){
     var that=this;
-    //console.log('start record');
-    if (!that.data.flag) {
+    if(that.data.none && that.data.grab){
+      //console.log('start record');
+      if (!that.data.flag) {
+        return
+      }
+      that.setData({
+        isBegin: true
+      })
+      recorderManager.start({
+        // 最大长度设置为 2 分钟
+        duration: 30 * 1000,
+        // 格式
+        format: 'mp3',
+        sampleRate: 16000,
+        encodeBitRate: 96000,
+        frameSize: 9,
+        numberOfChannels: 1
+      });
+    }else{
       return
     }
-    that.setData({
-      isBegin: true
-    })
-    recorderManager.start({
-      // 最大长度设置为 2 分钟
-      duration: 30 * 1000,
-      // 格式
-      format: 'mp3',
-      sampleRate: 16000,
-      encodeBitRate: 96000,
-      frameSize: 9,
-      numberOfChannels: 1
-    });
   },
   voiceEndRecord(e) {
     console.log(e);

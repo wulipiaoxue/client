@@ -102,7 +102,7 @@ Page({
       data:{
         hmac:'',
         params:{
-          adPosition:"appindextop",
+          adPosition:"wxCreateFolderBanner",
           limitCount:1
         }
       },
