@@ -34,8 +34,8 @@
     <button formType="submit" class='bt-submit'>{{btnTxt}}</button>
   </view>
   </form>
-  <view class="advert" catchtap='intoChtfund'>
-    <image src="/images/icon/baner.jpg"></image>
+  <view wx:if="{{imgUrl}}" class="advert" catchtap='intoChtfund'>
+    <image src="{{imgUrl}}"></image>
   </view> 
   <view class='home-bts'>
     <view class='bt-records' catchtap='intoMyRecord'>

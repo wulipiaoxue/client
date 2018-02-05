@@ -22,8 +22,8 @@
     <button class='remaining-submit' disabled='{{disabled}}' bindtap='sendCmd'>提现</button> 
     <view class='remaining-message2'>1-5个工作日到账</view>
   </view>
-  <view class="advert remain-advert" catchtap='intoChtfund'>
-     <image src="/images/icon/baner.jpg"></image>
+  <view wx:if="{{imgUrl}}" class="advert remain-advert" catchtap='intoChtfund'>
+     <image src="{{imgUrl}}"></image>
   </view> 
   <view class='remaining-message3'>
     <text bindtap='question'>常见问题</text>
