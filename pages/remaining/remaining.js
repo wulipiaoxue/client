@@ -76,6 +76,7 @@ Page({
       if (parseFloat(num) < 2) {
         that.setData({
           tipTxt: "每次提现不少于2元",
+          money: num,
           disabled: true
         })
       } else if (parseFloat(num) > that.data.balance){

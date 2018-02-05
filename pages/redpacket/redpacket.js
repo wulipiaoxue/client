@@ -154,9 +154,6 @@ Page({
                     })
                   }
                 }
-                that.setData({
-                  flag: true,
-                })
               }
             },
             fail: function () {
@@ -271,13 +268,12 @@ Page({
   voiceStartRecord(e) {
     var that=this;
     console.log(e)
-    that.restartRecord();
-  },
-  restartRecord(){
-    var that=this;
-    //console.log('start record');
-    if (!that.data.flag) {
+    if (that.data.flag) {
       return
+    }else{
+      that.setData({
+        flag:true
+      })
     }
     that.setData({
       isBegin: true
@@ -303,9 +299,13 @@ Page({
   },
 
   onVoiceStop(voiceInfo) {
+    var that=this;
     const { duration, tempFilePath } = voiceInfo;
     // 不允许小于 1 秒
     if (duration < 1000) {
+      that.setData({
+        flag: false
+      })
       util.showModel('提示','录音过短');
       return;
     }
@@ -321,6 +321,9 @@ Page({
       fail() {
         wx.hideToast();
         util.showModel('错误', '保存语音失败');
+        that.setData({
+          flag: false
+        })
       }
     });
   },
@@ -353,6 +356,9 @@ Page({
         if (data.status != "0") {
           console.error(data);
           wx.hideToast();
+          that.setData({
+            flag: false
+          })
           util.showModel('语音上传失败', data.data.message);
           return;
         } else {
@@ -376,7 +382,8 @@ Page({
               if(res.data.status == "0"){
                 util.showTip('领取成功');
                 that.setData({
-                  grab:false
+                  grab:false,
+                  flag:false,
                 })
                 that.getData();   //刷新数据
               }else{
@@ -384,6 +391,9 @@ Page({
                   title: '您的口令不正确，请重试',
                   icon:"none",
                   duration: 2000
+                })
+                that.setData({
+                  flag: false
                 })
               }
             }
