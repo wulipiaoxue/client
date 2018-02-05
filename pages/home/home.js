@@ -97,6 +97,29 @@ Page({
         }
       }
     })
+    wx.request({
+      url:'https://wap.chtfund.com/apis/wap/index/banners/findBannerByPosition.action',
+      data:{
+        hmac:'',
+        params:{
+          adPosition:"appindextop",
+          limitCount:1
+        }
+      },
+      method: 'POST',
+      header: {
+        "x-requested-with": "XMLHttpRequest"
+      },
+      success: function (res) {
+        if (res.data.status == "0") {
+          that.setData({
+            imgUrl: res.data.data[0].imgUrl
+          })
+        } else {
+          util.showModel('提示', res.data);
+        }
+      }
+    })
   },
   // 用户登录示例
   login: function () {
