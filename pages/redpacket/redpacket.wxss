@@ -325,8 +325,9 @@ image {
   font-size: 34rpx;
 }
 .red-title-container{
-   margin-top: 36rpx;
+   margin-top: 48rpx;
    margin-bottom: 30rpx;
+   width:80%;
    display: flex;
    flex-direction: row;
    justify-content: center;
@@ -341,4 +342,26 @@ image {
 .red-title{
   font-size: 39rpx;
   color:#ffd5a5;
+}
+.red-voice{
+  width:520rpx;
+  height:96rpx;
+  border:8rpx solid #ffd5a5;
+  border-radius:120rpx; 
+  /* box-shadow: 0 0 15rpx 2rpx #700105; */
+  position: absolute;
+  top:490rpx;
+  background-color:#f02d19; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.red-voice image{
+  width:30rpx;
+  height:49rpx;
+  margin-right:20rpx; 
+}
+.red-voice text{
+  color:#ffd5a5;
+  font-size: 30rpx;
 }

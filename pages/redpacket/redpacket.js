@@ -85,7 +85,7 @@ Page({
       data: {
         hmac:"",
         params:{
-          "id": that.data.packet_id || 2,
+          "id": that.data.packet_id || 8,
           "wx3rdSession": wx.getStorageSync("wx3rdSession"), 
         }
       },

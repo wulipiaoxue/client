@@ -17,7 +17,7 @@
     </view>
     <view class="red-voice">
       <image src="/images/icon/voice2.png"></image>
-      <text></text>
+      <text>按住说出以上口令领取赏金</text>
     </view>
     <!-- <image class="logo" src="/images/icon/logo.png"></image>
     <image class='redicon' src="{{ detail_info.ownerAvatarUrl }}"></image>
