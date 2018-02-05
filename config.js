@@ -3,7 +3,7 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://redpacketyfb.chtfund.com';
+var host = 'https://redpacket.chtfund.com';
 //var host = 'http://172.16.191.178:3000';
 // var host = 'https://441649268.rundong.xyz'; //production
 
