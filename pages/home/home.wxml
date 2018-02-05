@@ -35,7 +35,7 @@
   </view>
   </form>
   <view class="advert" catchtap='intoChtfund'>
-    <image src="https://s.chtfund.com//upload/htmall/images/content/82c8379b-c9ce-4f5c-a6ff-32b69ff6cab0.jpg"></image>
+    <image src="/images/icon/baner.jpg"></image>
   </view> 
   <view class='home-bts'>
     <view class='bt-records' catchtap='intoMyRecord'>
