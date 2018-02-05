@@ -19,6 +19,25 @@
       <image src="/images/icon/voice2.png"></image>
       <text>按住说出以上口令领取赏金</text>
     </view>
+    <view class="yue" catchtap='replace'>
+      <image class='red-title-img' src='{{select?"/images/icon/selected.png":"/images/icon/unselect.png"}}'/>
+      <text class='red-title'>勾选这里可以讲粤语喔！</text>
+    </view> 
+    <view class='red-action-container' catchtap='inCash'>
+      <view class='red-action-enchashment'>
+        <image src='/images/icon/dollars2.png'></image>
+        <text>去提现</text>
+      </view>
+      <view class='red-action-enchashment' catchtap='distributeRedPacket'>
+        <image src='/images/icon/redpacket3.png'></image>
+        <text>再发一个</text>
+      </view>
+
+      <view class='red-action-enchashment' catchtap='ToShare'>
+        <image src='/images/icon/share2.png'></image>
+        <text>去转发</text>
+      </view>
+    </view> 
     <!-- <image class="logo" src="/images/icon/logo.png"></image>
     <image class='redicon' src="{{ detail_info.ownerAvatarUrl }}"></image>
 
