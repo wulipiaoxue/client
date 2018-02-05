@@ -309,7 +309,9 @@ Page({
       util.showModel('提示','录音过短');
       return;
     }
-    util.showBusy('正在识别')
+    wx.showLoading({
+      title: '正在识别',
+    })
     // 保存文件
     wx.saveFile({
       tempFilePath,
@@ -319,7 +321,7 @@ Page({
         this.recognizeVoice(durations,savedFilePath);
       },
       fail() {
-        wx.hideToast();
+        wx.hideLoading();
         util.showModel('错误', '保存语音失败');
         that.setData({
           flag: false
@@ -355,7 +357,7 @@ Page({
         //console.log(data);
         if (data.status != "0") {
           console.error(data);
-          wx.hideToast();
+          wx.hideLoading();
           that.setData({
             flag: false
           })
@@ -380,6 +382,7 @@ Page({
             success:function(res){
               console.log(res)
               if(res.data.status == "0"){
+                wx.hideLoading();
                 util.showTip('领取成功');
                 that.setData({
                   grab:false,
@@ -387,6 +390,7 @@ Page({
                 })
                 that.getData();   //刷新数据
               }else{
+                wx.hideLoading();
                 wx.showToast({
                   title: '您的口令不正确，请重试',
                   icon:"none",
