@@ -1,12 +1,26 @@
 <view class='remaining-container'>
-  <view class="tip">
-    <text wx:if="{{tipTxt}}">{{tipTxt}}</text>
-  </view>
-  <view class='remaining-content'>
+  <view class="remaining">
     <view class='remaining-account'>
       <text class='remaining-accout-title'>账户余额</text>
       <text class='remaining-accout-sum'>{{balance}}元</text>
     </view>
+    <text class='remaining-accout-title'>提现金额</text>
+    <view class='remaining-input'>
+      <text>￥</text>
+      <input type='digit' value='{{money}}' placeholder='填写提现金额' placeholder-class='ney-holder' bindinput='meyInput'></input>
+    </view>
+    <view wx:if="{{rateAfter}}" class="walet">
+      <text class="waletTxt">服务费：<text class="red-color">{{fate}}</text></text>
+      <text class="getTxt">手续费：<text class="red-color">{{fate}}</text></text>
+      <text class="getTxt">实际到账金额：<text class="red-color">{{getMoney}}</text></text>
+    </view>
+    <view class="tip">
+      <text wx:if="{{tipTxt}}">{{tipTxt}}</text>
+    </view>
+    <view  class="input-box">
+    </view>
+  </view>
+  <view class='remaining-content'>
     <text class='remaining-title2'>提现金额</text>
     <view class='remaining-input'>
       <text>￥</text>

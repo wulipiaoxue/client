@@ -5,7 +5,94 @@
 .remaining-container {
   padding-left: 6%;
   padding-right: 6%;
+  padding-top:38rpx;
 }
+.remaining{
+  background-color: #fff;
+  padding: 0 60rpx;
+  border-radius: 20rpx;
+}
+.remaining-account{
+  padding:50rpx 0 60rpx;
+  display: flex;
+  align-items: center;
+}
+.remaining-accout-title {
+  font-size: 32rpx;
+  color: #383838;
+  margin-right: 50rpx;
+}
+.remaining-accout-sum {
+  color: #000;
+  font-size: 44rpx;
+  font-weight: bold;
+}
+.remaining-input {
+  margin-top:60rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+.remaining-input text {
+  font-weight: 600;
+  font-size: 55rpx;
+  margin-right:18rpx;
+  display: flex;
+  align-items:flex-start;
+}
+.ney-holder{
+  font-size:32rpx;
+  color:#ccc;
+  font-weight:normal;
+}
+.remaining-input input {
+  line-height: 80rpx;
+  font-size: 70rpx;
+  font-weight: 600;
+  height: 80rpx;
+}
+.walet{
+  margin:30rpx 0 15rpx;
+  display: flex;
+  align-items: flex-start;
+}
+.walet text{
+  font-size: 24rpx;
+}
+.waletTxt{
+  color:#555;
+}
+.getTxt{
+  margin-left:20rpx;
+  color:#555;
+}
+.red-color{
+  color:#db5943;
+}
+.tip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:60rpx;
+  margin-bottom: 15rpx;
+}
+.tip text{
+  font-size: 28rpx;
+  background-color:#dd6044;
+  display: block;
+  width:100%;
+  height:50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color:white;
+  border-radius: 10rpx;
+}
+
+
+
+
+
+
 
 .text-contact {
   width: 100%;
@@ -23,56 +110,9 @@
   padding: 38rpx;
 }
 
-.remaining-account {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 60rpx;
-}
 
-.remaining-accout-title {
-  font-size: 31rpx;
-  color: #505050;
-  margin-right: 120rpx;
-  vertical-align: middle;
-  line-height: 50rpx;
-}
 
-.remaining-accout-sum {
-  line-height: 50rpx;
-  color: #b8b8b8;
-  font-size: 45rpx;
-  vertical-align: middle;
-}
-
-.remaining-title2 {
-  font-size: 31rpx;
-  color: #505050;
-  line-height: 50rpx;
-}
-
-.remaining-input {
-  margin-top: 45rpx;
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1rpx solid #b8b8b8;
-}
-
-.remaining-input text {
-  font-weight: 600;
-  font-size: 55rpx;
-  margin-right: 60rpx;
-  display: flex;
-  align-items: center;
-}
-
-.remaining-input input {
-  line-height: 80rpx;
-  font-size: 70rpx;
-  font-weight: 600;
-  height: 90rpx;
-}
-
-.remaining-message1 {
+/* .remaining-message1 {
   font-size: 27rpx;
   color: #b8b8b8;
 }
@@ -80,7 +120,7 @@
 .text-all {
   font-size: 27rpx;
   color: #697b9f;
-}
+} */
 
 .remaining-submit {
   background-color: #1aad19;
@@ -113,29 +153,6 @@
   font-size: 25rpx;
   text-align: center;
   line-height: 80rpx;
-}
-.red-color{
-  color:#db5943;
-}
-.getTxt{
-  margin-left:30rpx;
-}
-.tip{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height:60rpx;
-}
-.tip text{
-  font-size: 28rpx;
-  background-color:#dd6044;
-  display: block;
-  width:90%;
-  height:50rpx;
-  line-height: 50rpx;
-  text-align: center;
-  color:white;
-  border-radius: 10rpx;
 }
 .remain-advert{
   padding:0;
