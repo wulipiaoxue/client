@@ -1,17 +1,33 @@
 <view class='share-container' >
-  <image class='share-icon' src="{{ avatar }}"></image>
+  <view class="ava-box">
+    <image class='share-icon' src="{{ avatar }}"></image>
+  </view>
   <view class='share-message-container'>
     <text>发一个语音口令</text>
-    <image class='share-message-img' src='/images/icon/redpacket2.png'></image>
   </view> 
-  <text class='share-title'>{{ command }}</text>
-
-  <view class='share-below'>
+  <view class="share-command">
+    <image src="/images/icon/mkf2.png"></image>
+    <text class='share-title'>{{ command }}</text>
+  </view>
+  <view class="share-bottom">
+    <image class="share-bottom-bg" src="/images/icon/bg.png"></image>
+    <view class="share-fold">
+      <image class="fold" src="/images/icon/head.png"></image>
+      <view class="share-icon-box">
+        <image class="share-circle" src="/images/icon/circle.png"></image>
+        <image class="share-click" src="/images/icon/icon.png"></image>
+      </view>
+    </view>
+    <button open-type="share" class="share-bt">转发到好友或群聊</button>
+    <view class="share-back" bindtap='intoBack'>返回</view>
+  </view>
+  
+  <!-- <view class='share-below'>
     <button class='share-bt1' open-type="share">转发到好友或群聊</button>
-    <!-- <button class='share-bt2' bindtap='getPic'>生成朋友圈分享图</button>  -->
+     <button class='share-bt2' bindtap='getPic'>生成朋友圈分享图</button>  
     <view catchtap='goBack'>
        <image class='back' src='/images/icon/back.png'></image> 
       <text class='text-back' >返回</text>
     </view> 
-  </view>
+  </view> -->
 </view>

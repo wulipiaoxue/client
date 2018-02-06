@@ -10,8 +10,8 @@ Page({
     //拿到红包的id 发红的头像 和口令
     var id = options.id;
     this.data.id=id;
-    var command = options.command;
-    var avatar = options.avatar;
+    var command = options.command ||"大吉大利晚上吃鸡好的哈哈浩浩荡荡好的";
+    var avatar = options.avatar || "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJXwkccAK33PyXUzHiaz0iaBZIThu8mFvgTQqVfkyKrYWWZojHVv6dsYET6gNqOdEFFl0vIicbDUuKiaQ/0";
     console.log("id=" + id + "  command=" + command + " avatar=" + avatar);
     this.setData({
       command: command,
