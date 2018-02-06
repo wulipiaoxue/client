@@ -13,16 +13,16 @@
       <input name="command" class='input-command' maxlength="20" placeholder="{{cmdConfig}}" placeholder-style="color:#d8d8d8" value='{{command}}' bindinput='commandFnc'/>
     </view>
     <view class='messages'>
-      <text class='text-message'>小伙伴们说口令就能获得随机的打赏</text>
+      <text class='text-message'>小伙伴们说对口令就能获得随机打赏</text>
     </view>
 
     <view class='moneys'>
-      <text >赏金(元)</text>
+      <text >赏金 (元)</text>
       <input name="reward" class='input-money' type='digit' placeholder="填写金额" maxlength='7' placeholder-style="color:#d8d8d8" value='{{money}}' bindinput='moneyFnc'></input>
     </view>
 
     <view class='nums'>
-      <text>数量(个)</text>
+      <text>数量 (个)</text>
       <input name="qty" class='input-num' type='number' maxlength='5' placeholder="填写数量" placeholder-style="color:#d8d8d8" value='{{num}}' bindinput="numFnc"></input>
     </view>
     <text class='text-message2'>优先使用余额￥{{balance}}</text>

@@ -22,11 +22,11 @@ input {
 }
 .advert{
   padding:30rpx;
-  margin-bottom: 108rpx;
 }
 .advert image{
   width:100%;
   height:243rpx;
+  border-radius: 15rpx;
 }
 .martop10{
   margin-bottom: 10rpx;
