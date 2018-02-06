@@ -1,22 +1,21 @@
 @import "../message-template/message-template.wxss";
 .send-container {
   text-align: center;
-  padding-top: 20rpx;
+  padding-top: 60rpx;
 }
 
 .user-icon {
-  width: 160rpx;
-  height: 160rpx;
+  width: 132rpx;
+  height: 132rpx;
   margin-bottom: 20rpx;
-  border-radius: 80rpx;
+  border-radius: 64rpx;
 }
 
 .user-info{
   display: flex;
   flex-direction: row;
   justify-content:  center;
-  margin-bottom: 35rpx;
-
+  margin-bottom: 80rpx;
 }
 
 .user-info text{
@@ -24,16 +23,16 @@
   vertical-align: middle;
 }
 .user-name{
- color: #afb9c3;
- margin-right: 20rpx;
+ color: #000;
+ font-size: 30rpx;
 }
 
 .info{
   display: flex;
   flex-direction: row;
-  justify-content:  center;
-  margin-bottom: 50rpx;
-
+  justify-content:  space-between;
+  width:80%;
+  margin:0 auto 95rpx;
 }
 
 .info-money{
@@ -42,13 +41,13 @@
   margin-right: 50rpx;
 }
 .info-money-title{
-  font-size: 27rpx;
-  color: #aaaaaa;
+  font-size: 30rpx;
+  color: #888;
   margin-bottom: 15rpx;
 }
 .info-money-num{
-  font-weight: 600;
-  font-size: 28rpx;
+  color:#888;
+  font-size: 66rpx;
 }
 
 .info-num{
@@ -56,13 +55,13 @@
   flex-direction: column;
 }
 .info-num-title{
-  font-size: 27rpx;
-  color: #aaaaaa;
+  font-size: 30rpx;
+  color: #888;
   margin-bottom: 15rpx;
 }
 .info-num-num{
-   font-weight: 600;
-  font-size: 28rpx;
+  color:#888;
+  font-size: 66rpx;
 }
 
 

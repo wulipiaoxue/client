@@ -24,5 +24,23 @@
      </swiper-item>
 
   </swiper>
+  <view class='home-bts'>
+    <view class='bt-records' catchtap='intoMyRecord'>
+      <image src='/images/icon/myrecords.png'></image>
+      <text>我的记录</text>
+    </view>
 
+    <view class='bt-money' catchtap='intoRemaining'>
+      <image src='/images/icon/money.png'></image>
+      <text>余额提现</text>
+    </view>
+
+    <view class='bt-question' catchtap='intoQuestion'>
+      <image src='/images/icon/question.png'></image>
+      <text>常见问题</text>
+
+    </view>
+
+
+  </view>
 </view>

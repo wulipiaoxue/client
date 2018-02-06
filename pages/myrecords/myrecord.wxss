@@ -21,6 +21,8 @@
   line-height: 40px;
   display: flex;
   flex-direction: column;
+  flex:6;
+  align-items: center;
 }
 .text-send{
   font-size: 16px;
@@ -32,8 +34,8 @@
 
 .line-send{
   height: 3px;
-  background-color: red;
-  width: 45px;
+  background-color:#f02d19;
+  width: 100%;
   margin: 0 auto;
 }
 .line-send2{
@@ -46,6 +48,15 @@
   line-height: 40px;
   display: flex;
   flex-direction: column;
+  flex:6;
+  align-items: center;
+}
+.text-send{
+  font-size: 16px;
+}
+.text-send2{
+  font-size: 16px;
+  color: #bbbbbb;
 }
 
 .text-receive{
@@ -58,8 +69,8 @@
 
 .line-receive{
   height: 3px;
-  background-color: red;
-  width: 45px;
+  background-color: #f02d19;
+  width:100%;
   margin: 0 auto;
 }
 .line-receive2{

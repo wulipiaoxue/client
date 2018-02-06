@@ -11,33 +11,23 @@
         </view>
         <view class='info'>
           <view class='info-money'>
-            <text class='info-money-title'>金额(元)</text>
             <text class='info-money-num'>{{pageItems.totalMoney}}</text>
+            <text class='info-money-title'>金额 (元)</text>
           </view>
           <view class='info-num'>
-            <text class='info-num-title'>数量(个)</text>
             <text class='info-num-num'>{{pageList.length}}</text>
+            <text class='info-num-title'>数量 (个)</text>
           </view>
         </view>
       </view>
       <view class='send-list'>
-      <block wx:for="{{pageList}}" wx:for-item="item" wx:for-index="idx">
-          <view catchtap="intoRedPacket" data-id="{{ item.folderid }}">
-            <template is="message" data="{{isSend,...item}}"/>
-          </view>
-      </block>
-        <!-- <template is="message" />
-        <template is="message" />
-        <template is="message" />
-         <template is="message" />
-        <template is="message" />
-        <template is="message" />
-        <template is="message" />
-        <template is="message" /> -->
-       
+        <block wx:for="{{pageList}}" wx:for-item="item" wx:for-index="idx">
+            <view catchtap="intoRedPacket" data-id="{{ item.folderid }}">
+              <template is="message" data="{{isSend,...item}}"/>
+            </view>
+        </block>
       </view>
-      <text class='almost-question' bindtap='question'>常见问题</text>
+      <!-- <text class='almost-question' bindtap='question'>常见问题</text> -->
     </view>
-
   </scroll-view>
 </template>

@@ -1,7 +1,7 @@
 .message-container2 {
   background-color: #fff;
   font-size: 30rpx;
-  padding: 17rpx 23rpx 17rpx 23rpx;
+  padding: 20rpx;
   margin-bottom: 1px;
   display: flex;
   flex-direction: row;
@@ -24,26 +24,32 @@
   justify-content: space-between;
 }
 .message-title{
-  color: #4c4c4c;
-  font-size: 30rpx;
+  color: #000;
+  font-size: 32rpx;
+  display: block;
+  width:512rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .message-time{
-  color: #b8b8b8;
+  color: #b2b2b2;
   font-size: 28rpx;
+  margin-top: 10rpx;
 }
 .message-right-text{
   display: flex;
   flex-direction: column;
   text-align: right;
   justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .message-money-sum {
-  font-weight: 600;
-  font-size: 30rpx;
+  font-size: 32rpx;
 }
 .message-date-sum{
-  color: #b8b8b8;
+  color: #b2b2b2;
   font-size: 28rpx;
 }
 
