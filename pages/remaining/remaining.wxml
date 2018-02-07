@@ -11,35 +11,51 @@
     </view>
     <view wx:if="{{rateAfter}}" class="walet">
       <text class="waletTxt">服务费：<text class="red-color">{{fate}}</text></text>
-      <text class="getTxt">手续费：<text class="red-color">{{fate}}</text></text>
-      <text class="getTxt">实际到账金额：<text class="red-color">{{getMoney}}</text></text>
+      <text class="getTxt">手续费：<text class="red-color">{{bankfate}}</text></text>
+      <text class="getTxt">实际到账：<text class="red-color">{{getMoney}}</text></text>
     </view>
     <view class="tip">
       <text wx:if="{{tipTxt}}">{{tipTxt}}</text>
     </view>
-    <view  class="input-box">
-    </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section">
+        <view class="section__title">选择银行</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <!-- <view class="picker">
+            {{array[index]}}
+          </view> -->
+          <input class="select-input" name="bank" value="{{bankName}}" disabled='true' placeholder='微信仅支持的17家银行' placeholder-class='select-holder'></input>
+        </picker>
+      </view>
+      <!-- <view  class="input-box">
+        <text>选择银行</text>
+        <input class="select-input" bindtap='openSelect' placeholder='微信仅支持的17家银行' placeholder-class='select-holder' disabled='true'></input>
+      </view> -->
+      <view  class="input-box">
+        <text>银行卡号</text>
+        <input class="select-input" maxlength='19' name="bankNo" placeholder='请输入正确银行卡' placeholder-class='select-holder'></input>
+      </view>
+      <view  class="input-box">
+        <text>用户姓名</text>
+        <input class="select-input" name="username" placeholder='请填写与银行卡对应户名' placeholder-class='select-holder'></input>
+      </view>
+      <view  class="input-box">
+        <text>手机号码</text>
+        <input class="select-input" maxlength='11' name="phone" placeholder='请填写手机号码' placeholder-class='select-holder'></input>
+      </view>
+      <button formType="submit" class="bt-submit">提现</button>
+    </form>
   </view>
-  <view class='remaining-content'>
-    <text class='remaining-title2'>提现金额</text>
-    <view class='remaining-input'>
-      <text>￥</text>
-      <input type='digit' value='{{money}}' bindinput='meyInput'></input>
-    </view>
-   
-    <text>提现到微信钱包，</text>
-    <text class='text-all' bindtap="all">全部提现</text>
-    <view wx:if="{{rateAfter}}" class="walet">
-      <text>服务费：<text class="red-color">{{fate}}</text></text>
-      <text class="getTxt">到账金额：<text class="red-color">{{getMoney}}</text></text>
-    </view>
-    <button class='remaining-submit' disabled='{{disabled}}' bindtap='sendCmd'>提现</button> 
-    <view class='remaining-message2'>1-5个工作日到账</view>
+  <view class="remaining-gap">
+    <text class="line"></text>
+    <text class="line"></text>
   </view>
-  <view class="advert remain-advert" catchtap='intoChtfund'>
-    <image src="https://s.chtfund.com//upload/htmall/images/content/82c8379b-c9ce-4f5c-a6ff-32b69ff6cab0.jpg"></image>
-  </view> 
-  <view class='remaining-message3'>
-    <text bindtap='question'>常见问题</text>
+  <view class="remaining-tip">
+    <view class="remaining-tip-title">提现须知：</view>
+    <text class="remaining-tip-colum">1.【包我开心】每笔提现服务费收取1%，最小提现金额2元。</text>
+    <text class="remaining-tip-colum">2.支取到银行卡，微信单笔收取0.1%手续费，最低1元，最高25元。</text>
+    <text class="remaining-tip-colum">3.【包我开心】提现服务费和微信支取到银行卡手续费是分别计算扣除。</text>
+    <text class="remaining-tip-colum">4.预计1-5个工作日到账。</text>
+    <text class="remaining-tip-colum">5.根据微信相关规定，【包我开心】需入驻满90天后允许开通付款到零钱功能，目前仅支持提现到微信支持的17家银行卡中。如有疑问，欢迎致电400-898-618咨询。</text>
   </view>
 </view>
