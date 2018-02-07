@@ -14,7 +14,7 @@ Page({
     disabled:true,
     array: ["中国工商银行", "中国农业银行", "中国银行", "中国建设银行", "招商银行", "中国邮政储蓄银行", "中国交通银行", "浦发银行", "中国民生银行", "兴业银行", "平安银行", "中信银行", "华夏银行", "广发银行", "光大银行", "北京银行", "宁波银行"],
     bankName:"",
-    bankfate:0.00,
+    bankfate:"0.00",
   },
   onLoad: function (options) {
     var that=this;
@@ -122,7 +122,7 @@ Page({
           that.setData({
             tipTxt: "",
             fate: (parseFloat(num) / that.data.rateAfter).toFixed(2),
-            bankfate: 1.00,
+            bankfate: "1.00",
             getMoney: (parseFloat(num) - (parseFloat(num) / that.data.rateAfter).toFixed(2) - 1).toFixed(2),
             money: num,
           })
@@ -130,7 +130,7 @@ Page({
           that.setData({
             tipTxt: "",
             fate: (parseFloat(num) / that.data.rateAfter).toFixed(2),
-            bankfate: 25.00,
+            bankfate: "25.00",
             getMoney: (parseFloat(num) - (parseFloat(num) / that.data.rateAfter).toFixed(2) - 25).toFixed(2),
             money: num,
           })

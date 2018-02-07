@@ -13,17 +13,19 @@
     </view>
     <view class="red-title-container">
       <image class='red-title-img' src='/images/icon/mkf2.png'/>
-      <text class='red-title'>{{ detail_info.commond }}</text>
+      <text class='red-title'>{{ detail_info.commond }}哈哈都会好的好的多喝点都会好的哈很多很多</text>
     </view>
-    <view bindtouchend="voiceEndRecord" bindtouchstart="voiceStartRecord" class="red-voice">
+    <view wx:if="{{!hasney}}"  bindtouchend="voiceEndRecord" bindtouchstart="voiceStartRecord" class="red-voice">
       <view wx:if="{{none || state == 3}}" class="mask"></view> 
       <image wx:if="{{(state == 2)&& grab}}" src="/images/icon/voice2.png"></image>
       <text wx:if="{{ (state == 2)&& grab }}" class="red-cmd">按住说出以上口令领取赏金</text>
       <text wx:if="{{none}}" class="red-text">赏金都被领完了</text>
-      <text wx:if="{{state == 3}}" class="red-text">红包已经过期了</text>
-      <text wx:if="{{introTxt }}" class="red-num">{{introTxt}}元</text>  
+      <text wx:if="{{state == 3}}" class="red-text">红包已经过期了</text> 
     </view>
-    <view class="yue" catchtap='replace'>
+    <view wx:if="{{hasney}}" class="hasney">
+      <text wx:if="{{introTxt }}" class="hasney-text"><text class="red-num">{{introTxt}}</text>元</text> 
+    </view>
+    <view wx:if="{{!hasney}}" class="yue" catchtap='replace'>
       <image class='red-title-img' src='{{select?"/images/icon/selected.png":"/images/icon/unselect.png"}}'/>
       <text class='red-title'>勾选这里可以讲粤语喔！</text>
     </view> 

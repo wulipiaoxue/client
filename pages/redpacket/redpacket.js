@@ -27,8 +27,7 @@ Page({
     none:false,     //红包已抢完
     state:null, //红包状态
     grab: false,  //可否抢的条件之一
-    touchStartTime:"",
-    touchSEndTime:""
+    hasney:true,
   },
   onLoad: function (options) {
     //将该红包id保存在data里面
@@ -144,6 +143,9 @@ Page({
                     introTxt: util.recNum(res.data.data.pageList[0].amount),
                   })
                 }else{
+                  that.setData({
+                    hasney: false,
+                  })
                   if (foldObject.numberLeft == "0") { //红包已经领完了
                     that.setData({
                       none: true,
