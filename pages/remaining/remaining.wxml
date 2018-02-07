@@ -33,7 +33,7 @@
       </view> -->
       <view  class="input-box">
         <text>银行卡号</text>
-        <input class="select-input" maxlength='19' name="bankNo" placeholder='请输入正确银行卡' placeholder-class='select-holder'></input>
+        <input class="select-input" type='number' maxlength='19' name="bankNo" placeholder='请输入正确银行卡' placeholder-class='select-holder'></input>
       </view>
       <view  class="input-box">
         <text>用户姓名</text>
@@ -41,7 +41,7 @@
       </view>
       <view  class="input-box">
         <text>手机号码</text>
-        <input class="select-input" maxlength='11' name="phone" placeholder='请填写手机号码' placeholder-class='select-holder'></input>
+        <input class="select-input" type='number' maxlength='11' name="phone" placeholder='请填写手机号码' placeholder-class='select-holder'></input>
       </view>
       <button formType="submit" class="bt-submit">提现</button>
     </form>

@@ -114,7 +114,7 @@ page{
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20rpx 2rpx #ffd5a5;
+  box-shadow: 0 0 30rpx 4rpx rgba(112,1,5,0.7);
 }
 .share-back{
   position: relative;

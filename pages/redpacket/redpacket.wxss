@@ -15,10 +15,10 @@ image {
 
 .redpacket-content {
   background-color: #dd6044;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   text-align: center;
   position: relative;
   width:750rpx;
@@ -34,14 +34,14 @@ image {
   left:0;
 }
 .head{
-  width:750rpx;
+  width:100%;
   height:244rpx;
-  z-index:1;
+  /*z-index:1;
   position: absolute;
-  top:0;
+  top:0; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 .head-bg{
   width:750rpx;
@@ -53,8 +53,9 @@ image {
   left:0;
 }
 .logo{
-  position: absolute;
-  top:0;
+  /* position: absolute;
+  top:0; */
+  position: relative;
   width:200rpx;
   height:54rpx;
   z-index:1;
@@ -62,12 +63,16 @@ image {
 .ava{
   width:262rpx;
   height:262rpx;
-  position: absolute;
+  /* position: absolute;
   top:60rpx;
-  z-index:2;
+  z-index:2; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top:-175rpx;
+  margin:0 auto;
 }
 .circle{
   width:262rpx;
@@ -86,20 +91,27 @@ image {
   left:2rpx;
 }
 .red-name {
-  position: absolute;
-  bottom:-50rpx;
+  display: block;
+  height:44rpx;
+  margin:0 auto;
+  position: relative;
+  top:-165rpx;
+}
+.red-name .name{
   color: #ffd5a5;
   font-size: 34rpx;
 }
 .red-title-container{
-   margin-top: 58rpx;
    margin-bottom: 30rpx;
    width:80%;
+   margin:0 auto;
    display: flex;
    flex-direction: row;
    justify-content: center;
    align-items: flex-start;
    position: relative;
+   top:-150rpx;
+   font-weight:600;
 }
 .red-title-img{
   width: 48rpx;
@@ -110,19 +122,22 @@ image {
 .red-title{
   font-size: 39rpx;
   color:#ffd5a5;
+  line-height:55rpx;
 }
 .red-voice{
   width:520rpx;
   height:96rpx;
   border:8rpx solid #ffd5a5;
   border-radius:120rpx; 
-  /* box-shadow: 0 0 15rpx 2rpx #700105; */
-  position: absolute;
-  top:510rpx;
+  position: relative;
+  top:-100rpx;
+  margin:0 auto;
   background-color:#f02d19; 
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index:1;
+  box-shadow: 0 0 30rpx 4rpx rgba(112,1,5,0.7);
 }
 .red-voice .red-num{
   font-size:40rpx;
@@ -152,9 +167,11 @@ image {
   font-size: 30rpx;
 }
 .hasney{
-  position: absolute;
-  top:500rpx;
-  z-index:1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:-120rpx;
 }
 .hasney .hasney-text{
   font-size:49rpx;
@@ -165,19 +182,21 @@ image {
   color:#ffd5a5;
 }
 .yue{
-  position: absolute;
-  top:660rpx;
+  margin:0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20rpx;
+  position: relative;
+  z-index:1;
+  top:-60rpx;
 }
 .yue image{
-  width:48rpx;
-  height:48rpx;
+  width:42rpx;
+  height:42rpx;
 }
 .yue .red-title{
-  font-size: 34rpx;
+  font-size: 28rpx;
 }
 .red-action-container {
   position: absolute;
@@ -318,4 +337,54 @@ image {
 }
 .repacketIntro{
   padding-bottom: 30rpx;
+}
+
+/* 动画 */
+.loading{
+  position: absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  width:100rpx;
+  height:100rpx;
+  z-index:3;
+  background-color: rgba(53,53,53,0.8);
+  display: flex;
+  align-items: center;
+  padding:0 15rpx;
+  justify-content: space-around;
+  border-radius: 5rpx;
+  box-sizing: border-box;
+}
+.loading text{
+  display: inline-block;
+  width: 8rpx;
+  height: 100%;
+  border-radius: 8rpx;
+  background: lightgreen;
+  -webkit-animation: load 1s ease infinite;
+  animation: load 1s ease infinite;
+}
+@-webkit-keyframes load{
+  0%,100%{
+    height: 40rpx;
+    background: lightgreen;
+  }
+  50%{
+    height: 70rpx;
+    margin: -15rpx 0;
+    background: lightblue;
+  }
+}
+.loading text:nth-child(2){
+  animation-delay:0.2s;
+}
+.loading text:nth-child(3){
+  animation-delay:0.4s;
+}
+.loading text:nth-child(4){
+  animation-delay:0.6s;
+}
+.loading text:nth-child(5){
+  animation-delay:0.8s;
 }

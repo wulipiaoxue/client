@@ -32,7 +32,7 @@ Page({
   onLoad: function (options) {
     //将该红包id保存在data里面
     this.setData({
-      packet_id: options.id
+      packet_id: options.id ||3
     });
     /**
      * 判断用户是否登录，避免在从红包转发入口进入时，领取红包缺少此用户的登录信息openid等
@@ -84,7 +84,7 @@ Page({
       data: {
         hmac:"",
         params:{
-          "id": that.data.packet_id || 30,
+          "id": that.data.packet_id,
           "wx3rdSession": wx.getStorageSync("wx3rdSession"), 
         }
       },
@@ -95,7 +95,6 @@ Page({
       success: function (res) {
         console.log(res);
         var foldObject=res.data.data;
-        wx.hideLoading();
         if (res.data.status == "1") {
           if (res.data.code == "CF0004"){
             qcloud.login({
@@ -103,6 +102,7 @@ Page({
               success: that.getData,
             })
           }else{
+            wx.hideLoading();
             util.showModel("获取信息失败",res.data);
           }
         }else{
@@ -123,7 +123,7 @@ Page({
             data: {
               hmac: "",
               params: {
-                "folderid": that.data.packet_id||30,
+                "folderid": that.data.packet_id,
                 curPage: "1",// 当前页码 
                 pageSize: "2",//每页显示条数    
                 "wx3rdSession": wx.getStorageSync("wx3rdSession"),
@@ -135,12 +135,14 @@ Page({
             },
             success: function (res) {
               console.log(res);
+              wx.hideLoading();
               if (res.data.status == "1") {
                 util.showModel("获取个人抢取信息失败", res.data);
               } else {
                 if (res.data.data.pageList && res.data.data.pageList.length != 0) {
                   that.setData({
                     introTxt: util.recNum(res.data.data.pageList[0].amount),
+                    hasney: true,
                   })
                 }else{
                   that.setData({
@@ -277,7 +279,7 @@ Page({
   },
   restartRecord(){
     var that=this;
-    if(that.data.none && that.data.grab){
+    if((that.data.state=="2") && that.data.grab){
       //console.log('start record');
       if (!that.data.flag) {
         return
@@ -315,7 +317,9 @@ Page({
       util.showModel('提示','录音过短');
       return;
     }
-    util.showBusy('正在识别')
+    wx.showLoading({
+      title: '正在识别',
+    })
     // 保存文件
     wx.saveFile({
       tempFilePath,
@@ -325,7 +329,7 @@ Page({
         this.recognizeVoice(durations,savedFilePath);
       },
       fail() {
-        wx.hideToast();
+        wx.hideLoading();
         util.showModel('错误', '保存语音失败');
       }
     });
@@ -358,7 +362,7 @@ Page({
         //console.log(data);
         if (data.status != "0") {
           console.error(data);
-          wx.hideToast();
+          wx.hideLoading();
           util.showModel('语音上传失败', data.data.message);
           return;
         } else {
@@ -380,12 +384,14 @@ Page({
             success:function(res){
               console.log(res)
               if(res.data.status == "0"){
+                wx.hideLoading();
                 util.showTip('领取成功');
                 that.setData({
                   grab:false
                 })
                 that.getData();   //刷新数据
               }else{
+                wx.hideLoading();
                 wx.showToast({
                   title: '您的口令不正确，请重试',
                   icon:"none",
@@ -398,6 +404,7 @@ Page({
       },
       fail: function (e) {
         console.error(e);
+        wx.hideLoading();
         util.showModel('语音识别失败', e);
       }
     });
@@ -408,9 +415,9 @@ Page({
     })
   },
   replace:function(){
+    wx.setStorageSync("select", !this.data.select);
     this.setData({
       select:!this.data.select
     })
-    wx.setStorageSync("select", this.data.select);
   }
 })

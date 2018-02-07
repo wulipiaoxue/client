@@ -95,7 +95,7 @@ function luhnCheck(bankno) {
     console.log("验证通过");
     return true;
   } else {
-    util.showTip("银行卡号必须符合luhn校验");
+    util.showTip("银行卡号校验失败");
     return false;
   }
 }

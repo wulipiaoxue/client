@@ -108,6 +108,7 @@ Page({
       } else if (parseFloat(num) > that.data.balance){
         that.setData({
           tipTxt: "提现金额不能大于余额",
+          money: num,
         })
       } else{
         if (parseFloat(num) > 1000 && parseFloat(num) < 25000){

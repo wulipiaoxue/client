@@ -139,5 +139,20 @@ Page({
     wx.navigateTo({
       url: '/pages/question/question',
     })
+  },
+  intoQuestion: function () {
+    wx.navigateTo({
+      url: '/pages/question/question',
+    })
+  },
+  intoMyRecord: function (event) {
+    wx.navigateTo({
+      url: '/pages/myrecords/myrecord',
+    })
+  },
+  intoRemaining: function (event) {
+    wx.navigateTo({
+      url: '/pages/remaining/remaining',
+    })
   }
 })

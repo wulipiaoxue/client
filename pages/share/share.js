@@ -23,7 +23,7 @@ Page({
       userInfo: wx.getStorageSync("userinfo")
     });
   },
-  goBack:function(){
+  intoBack:function(){
     wx.navigateBack({
       delta: 1
     })

@@ -9,11 +9,20 @@
     <view class="ava">
       <image class="circle" src="/images/icon/circle.png"></image>
       <image class='redicon' src="{{ detail_info.ownerAvatarUrl }}"></image>
-      <text class='red-name'>{{detail_info.ownerNickName}}</text>
+    </view>
+    <view class="red-name">
+      <text class="name">{{detail_info.ownerNickName}}</text>
+      <view wx:if="{{isBegin}}" class="loading">
+        <text></text>
+        <text></text> 
+        <text></text> 
+        <text></text> 
+        <text></text>
+      </view>
     </view>
     <view class="red-title-container">
       <image class='red-title-img' src='/images/icon/mkf2.png'/>
-      <text class='red-title'>{{ detail_info.commond }}哈哈都会好的好的多喝点都会好的哈很多很多</text>
+      <text class='red-title'>{{ detail_info.commond }}</text>
     </view>
     <view wx:if="{{!hasney}}"  bindtouchend="voiceEndRecord" bindtouchstart="voiceStartRecord" class="red-voice">
       <view wx:if="{{none || state == 3}}" class="mask"></view> 
