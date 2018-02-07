@@ -2,7 +2,7 @@
   <view class='question-template-container'>
     <view class='question-item-one'>
       <text>{{title}}</text>
-      <image src='/images/icon/more.png'></image>
+      <image src='/images/icon/myrecords.png'></image>
     </view>
     <view class="{{isOpen===0?'question-line':'question-line2'}}" ></view>
     <text class="{{isOpen===0?'question-detail':'question-detail2'}}" >{{detail}}</text>
