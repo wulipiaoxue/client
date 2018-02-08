@@ -53,6 +53,10 @@
         <text>去转发</text>
       </view>
     </view> 
+    <view wx:if="{{error}}" class="cmdError">
+      <image src="/images/icon/error.png"></image>
+      <text>再接再厉吧！</text>
+    </view>
   </view>
   <view class='red-below-container'>
     <view class='red-below-container-title'>

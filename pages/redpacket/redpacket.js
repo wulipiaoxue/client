@@ -27,7 +27,8 @@ Page({
     none:false,     //红包已抢完
     state:null, //红包状态
     grab: false,  //可否抢的条件之一
-    hasney:true,
+    hasney:true,  //是否已抢过
+    error:false, // 口令是否正确
   },
   onLoad: function (options) {
     //将该红包id保存在data里面
@@ -392,11 +393,14 @@ Page({
                 that.getData();   //刷新数据
               }else{
                 wx.hideLoading();
-                wx.showToast({
-                  title: '您的口令不正确，请重试',
-                  icon:"none",
-                  duration: 2000
+                that.setData({
+                  error:true
                 })
+                setTimeout(function(){
+                  that.setData({
+                    error: false
+                  })
+                },2000)              
               }
             }
           })
