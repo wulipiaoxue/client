@@ -275,8 +275,27 @@ Page({
   },
   voiceStartRecord(e) {
     var that=this;
-    console.log(e)
-    that.restartRecord();
+    if ((that.data.state == "2") && that.data.grab) {
+      //console.log('start record');
+      if (!that.data.flag) {
+        return
+      }
+      that.setData({
+        isBegin: true
+      })
+      recorderManager.start({
+        // 最大长度设置为 2 分钟
+        duration: 30 * 1000,
+        // 格式
+        format: 'mp3',
+        sampleRate: 16000,
+        encodeBitRate: 96000,
+        frameSize: 9,
+        numberOfChannels: 1
+      });
+    } else {
+      return
+    }
   },
   restartRecord(){
     var that=this;
