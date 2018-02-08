@@ -1,0 +1,60 @@
+<view class='remaining-container'>
+  <view class="tip">
+    <text wx:if="{{tipTxt}}">{{tipTxt}}</text>
+  </view>
+  <view class='remaining-content'>
+    <view class='remaining-account'>
+      <text class='remaining-accout-title'>账户余额</text>
+      <text class='remaining-accout-sum'>{{balance}}元</text>
+    </view>
+    <text class='remaining-title2'>提现金额</text>
+    <view class='remaining-input'>
+      <text>￥</text>
+      <input type='digit' value='{{money}}' placeholder='填写提现金额' placeholder-class='ney-holder' bindinput='meyInput'></input>
+    </view>
+   
+    <text>提现到微信钱包，</text>
+    <text class='text-all' bindtap="all">全部提现</text>
+    <view wx:if="{{rateAfter}}" class="walet">
+      <text>服务费：<text class="red-color">{{fate}}</text></text>
+      <text class="getTxt">到账金额：<text class="red-color">{{getMoney}}</text></text>
+    </view>
+    <view class='remaining-submit' bindtap='sendCmd'>
+      <text class="{{disabled?'white':''}}">提现</text>
+      <view wx:if="{{disabled}}" class="mask"></view>
+    </view>
+    <view class='remaining-message2'>1-5个工作日到账</view>
+  </view>
+  <view wx:if="{{imgUrl}}" class="advert remain-advert" catchtap='intoChtfund'>
+     <image src="{{imgUrl}}"></image>
+  </view> 
+  <view class='home-bts'>
+    <view class='bt-records' catchtap='intoMyRecord'>
+      <image src='/images/icon/myrecords.png'></image>
+      <text>我的记录</text>
+    </view>
+
+    <view class='bt-money' catchtap='intoRemaining'>
+      <image src='/images/icon/money.png'></image>
+      <text>余额提现</text>
+    </view>
+
+    <view class='bt-question' catchtap='intoQuestion'>
+      <image src='/images/icon/question.png'></image>
+      <text>常见问题</text>
+
+    </view>
+
+  </view>
+  <view wx:if="{{showPage}}" class="page-mask">
+    <view class="page-tip">
+      <image src="/images/icon/tip.png"></image>
+      <view class="tip-content">
+        <text class="tip-content-title">尊敬的主人：</text>
+        <text class="tip-content-wrap">根据微信有关规定，开通付款到零钱功能需入驻满90天，而【包我开心】正在成长。恰逢新春佳节，祝您全家幸福安康！【包我开心】将在节后尽快开通提现功能，给主人造成不便，望您谅解。</text>
+        <text class="tip-content-wrap">虽然暂时无法提现，不过主人可以优先使用月发给好友语音红包喔！</text>
+      </view>
+      <view class="send-submit" bindtap="intoHome">立即发红包</view>
+    </view>
+  </view>
+</view>

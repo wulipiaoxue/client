@@ -8,7 +8,7 @@
     "pages/question/question",
     "pages/share/share",
     "pages/chtfund/chtfund",
-    "pages/mytip/mytip"
+    "pages/oldremain/remaining"
   ],
   "window":{
     "backgroundColor":"#F6F6F6",

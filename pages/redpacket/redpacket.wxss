@@ -149,12 +149,11 @@ image {
 }
 .mask{
   position: absolute;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  background-color: #f5ae9c;
-  border:8rpx solid #f5ae9c;
+  top:-8rpx;
+  left:-8rpx;
+  bottom:-8rpx;
+  right:-8rpx;
+  background-color: rgba(254,206,194,0.7);
   border-radius:120rpx; 
 }
 .red-voice image{

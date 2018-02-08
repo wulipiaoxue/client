@@ -477,7 +477,7 @@ Page({
   },
   intoRemaining:function(event){
     wx.navigateTo({
-      url: '/pages/remaining/remaining',
+      url: '/pages/oldremain/remaining',
     })
   },
   submit_voice:function(event){

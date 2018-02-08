@@ -141,18 +141,18 @@ Page({
     })
   },
   intoQuestion: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/question/question',
     })
   },
   intoMyRecord: function (event) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/myrecords/myrecord',
     })
   },
   intoRemaining: function (event) {
-    wx.navigateTo({
-      url: '/pages/remaining/remaining',
+    wx.redirectTo({
+      url: '/pages/oldremain/remaining',
     })
   }
 })
