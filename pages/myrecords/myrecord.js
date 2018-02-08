@@ -141,13 +141,13 @@ Page({
     })
   },
   intoQuestion: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/question/question',
     })
   },
-  intoMyRecord: function (event) {
-    wx.redirectTo({
-      url: '/pages/myrecords/myrecord',
+  intoHome: function (event) {
+    wx.reLaunch({
+      url: '/pages/home/home',
     })
   },
   intoRemaining: function (event) {

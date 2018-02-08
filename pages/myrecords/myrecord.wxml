@@ -25,9 +25,9 @@
 
   </swiper>
   <view class='home-bts'>
-    <view class='bt-records' catchtap='intoMyRecord'>
+    <view class='bt-records' catchtap='intoHome'>
       <image src='/images/icon/myrecords.png'></image>
-      <text>我的记录</text>
+      <text>发红包</text>
     </view>
 
     <view class='bt-money' catchtap='intoRemaining'>

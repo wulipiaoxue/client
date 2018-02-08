@@ -34,9 +34,9 @@
       <text>我的记录</text>
     </view>
 
-    <view class='bt-money' catchtap='intoRemaining'>
+    <view class='bt-money' catchtap='intoHome'>
       <image src='/images/icon/money.png'></image>
-      <text>余额提现</text>
+      <text>发红包</text>
     </view>
 
     <view class='bt-question' catchtap='intoQuestion'>
@@ -51,10 +51,11 @@
       <image src="/images/icon/tip.png"></image>
       <view class="tip-content">
         <text class="tip-content-title">尊敬的主人：</text>
-        <text class="tip-content-wrap">根据微信有关规定，开通付款到零钱功能需入驻满90天，而【包我开心】正在成长。恰逢新春佳节，祝您全家幸福安康！【包我开心】将在节后尽快开通提现功能，给主人造成不便，望您谅解。</text>
+        <text class="tip-content-wrap">春节快乐，由于春节期间休假安排，【包我开心】暂时不支持提现功能，我们将于节后尽快开放提现窗口，请谅解。</text>
         <text class="tip-content-wrap">虽然暂时无法提现，不过主人可以优先使用月发给好友语音红包喔！</text>
       </view>
       <view class="send-submit" bindtap="intoHome">立即发红包</view>
+      <view class="back-submit" bindtap="intoBack">返回</view>
     </view>
   </view>
 </view>

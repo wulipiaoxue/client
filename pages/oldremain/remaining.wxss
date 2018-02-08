@@ -164,8 +164,7 @@
   border-radius: 10rpx;
 }
 .remain-advert{
-  padding:0;
-  margin-top:30rpx;
+  padding:30rpx 0 110rpx;
 }
 
 /* 页面遮罩 */
@@ -223,4 +222,19 @@
   box-shadow: 0 0 30rpx 4rpx rgba(112,1,5,0.2);
   font-size: 30rpx;
   margin:30rpx auto;
+}
+.back-submit{
+  border-radius: 60rpx;
+  width: 484rpx;
+  height: 84rpx;
+  border:8rpx solid #ffd5a5;
+  text-align: center;
+  background-color: #f02d19;
+  color: #ffd5a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30rpx 4rpx rgba(112,1,5,0.2);
+  font-size: 30rpx;
+  margin:-15rpx auto;
 }

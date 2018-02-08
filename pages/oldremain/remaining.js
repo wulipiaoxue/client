@@ -227,7 +227,7 @@ Page({
     }
   },
   intoQuestion: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/question/question',
     })
   },
@@ -236,16 +236,21 @@ Page({
       url: '/pages/myrecords/myrecord',
     })
   },
-  intoRemaining: function (event) {
-    wx.redirectTo({
-      url: '/pages/oldremain/remaining',
+  intoHome: function (event) {
+    wx.reLaunch({
+      url: '/pages/home/home',
     })
   },
   intoHome:function(){
     wx.redirectTo({
       url: '/pages/home/home',
     })
-  }
+  },
+  intoBack:function(){
+    this.setData({
+      showPage: false
+    })
+  },
   // intoChtfund:function(){
   //   wx.navigateTo({
   //     url: '/pages/chtfund/chtfund',

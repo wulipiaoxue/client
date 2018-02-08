@@ -84,10 +84,11 @@ image {
 .redicon {
   width: 156rpx;
   height: 156rpx;
-  border-radius: 78rpx;
+  border-radius: 88rpx;
+  border:10rpx solid #ffd5a5;
   z-index: 2;
   position: relative;
-  top:3rpx;
+  top:2rpx;
   left:2rpx;
 }
 .red-name {
