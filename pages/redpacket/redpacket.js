@@ -22,7 +22,7 @@ Page({
     isPlayidx:null,
     introTxt:"",
     isBegin:false,
-    flag:false,
+    flag:false,  //判断是否当前可以录音
     select:wx.getStorageSync("select") || false,
     none:false,     //红包已抢完
     state:null, //红包状态
@@ -159,9 +159,6 @@ Page({
                     })
                   }
                 }
-                that.setData({
-                  flag: true,
-                })
               }
             },
             fail: function () {
@@ -277,8 +274,12 @@ Page({
     var that=this;
     if ((that.data.state == "2") && that.data.grab) {
       //console.log('start record');
-      if (!that.data.flag) {
+      if (that.data.flag) {
         return
+      } else {
+        that.setData({
+          flag: true
+        })
       }
       that.setData({
         isBegin: true
@@ -297,30 +298,6 @@ Page({
       return
     }
   },
-  restartRecord(){
-    var that=this;
-    if((that.data.state=="2") && that.data.grab){
-      //console.log('start record');
-      if (!that.data.flag) {
-        return
-      }
-      that.setData({
-        isBegin: true
-      })
-      recorderManager.start({
-        // 最大长度设置为 2 分钟
-        duration: 30 * 1000,
-        // 格式
-        format: 'mp3',
-        sampleRate: 16000,
-        encodeBitRate: 96000,
-        frameSize: 9,
-        numberOfChannels: 1
-      });
-    }else{
-      return
-    }
-  },
   voiceEndRecord(e) {
     console.log(e);
     this.setData({
@@ -331,10 +308,14 @@ Page({
   },
 
   onVoiceStop(voiceInfo) {
+    var that=this;
     const { duration, tempFilePath } = voiceInfo;
     // 不允许小于 1 秒
     if (duration < 1000) {
       util.showModel('提示','录音过短');
+      this.setData({
+        flag: false
+      })
       return;
     }
     wx.showLoading({
@@ -350,6 +331,9 @@ Page({
       },
       fail() {
         wx.hideLoading();
+        that.setData({
+          flag: false
+        })
         util.showModel('错误', '保存语音失败');
       }
     });
@@ -383,6 +367,9 @@ Page({
         if (data.status != "0") {
           console.error(data);
           wx.hideLoading();
+          that.setData({
+            flag: false
+          })
           util.showModel('语音上传失败', data.data.message);
           return;
         } else {
@@ -407,11 +394,17 @@ Page({
                 wx.hideLoading();
                 util.showTip('领取成功');
                 that.setData({
+                  flag: false
+                })
+                that.setData({
                   grab:false
                 })
                 that.getData();   //刷新数据
               }else{
                 wx.hideLoading();
+                that.setData({
+                  flag: false
+                })
                 that.setData({
                   error:true
                 })
