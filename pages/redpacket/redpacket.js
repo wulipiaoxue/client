@@ -415,7 +415,7 @@ Page({
   },
   inCash(event) {
     wx.navigateTo({
-      url: '/pages/remaining/remaining',
+      url: '/pages/oldremain/remaining',
     })
   },
   replace:function(){
