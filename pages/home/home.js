@@ -171,6 +171,9 @@ Page({
     var command = e.detail.value;
     var rep = /^[\u4E00-\u9FA5]+$/;
     if (rep.test(command)){
+      that.setData({
+        command: command
+      })
       return
     }else{
       this.setData({
@@ -303,7 +306,6 @@ Page({
       })
     }
     var rep = /^[\u4E00-\u9FA5]+$/;
-    console.log(e.detail);
     if (!that.data.command){
       var command = that.data.cmdConfig;
     }else{
@@ -435,15 +437,15 @@ Page({
             })
           }else{
             that.setData({
+              account: (that.data.account - that.data.money).toFixed(2),
+              balance: (that.data.account - that.data.money).toFixed(2),
               paying: false,
               command: "",
               money: "",
               num: "",
-              account: (that.data.account - e.detail.value.reward).toFixed(2),
-              balance: (that.data.account - e.detail.value.reward).toFixed(2)
             })
             wx.navigateTo({
-              url: '/pages/share/share?avatar=' + that.data.userInfo.avatarUrl + '&command=' + e.detail.value.command + '&id=' + id,
+              url: '/pages/share/share?avatar=' + that.data.userInfo.avatarUrl + '&command=' +command + '&id=' + id,
             })
           }
         }else{
