@@ -52,10 +52,12 @@
       <view class="tip-content">
         <text class="tip-content-title">尊敬的主人：</text>
         <text class="tip-content-wrap">春节快乐，由于春节期间休假安排，【包我开心】暂时不支持提现功能，我们将于节后尽快开放提现窗口，请谅解。</text>
-        <text class="tip-content-wrap">虽然暂时无法提现，不过主人可以优先使用月发给好友语音红包喔！</text>
+        <text class="tip-content-wrap">虽然暂时无法提现，不过主人可以优先使用余额给好友发语音红包喔！</text>
       </view>
       <view class="send-submit" bindtap="intoHome">立即发红包</view>
-      <view class="back-submit" bindtap="intoBack">返回</view>
+      <view class="back-submit">
+        <image  bindtap="intoBack" src="/images/icon/close.png"></image>
+      </view>
     </view>
   </view>
 </view>

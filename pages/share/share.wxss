@@ -11,6 +11,8 @@ page{
 .ava-box{
   margin-top:50rpx; 
   margin-bottom: 10rpx;
+  position: relative;
+  z-index:1;
 }
 .share-icon{
   width: 126rpx;
@@ -45,9 +47,8 @@ page{
   letter-spacing: 2rpx;
 }
 .share-bottom{
+  flex:1;
   position: relative;
-  width:100%;
-  height:100%;
 }
 .share-bottom-bg{
   position: absolute;

@@ -33,7 +33,7 @@ Page({
   onLoad: function (options) {
     //将该红包id保存在data里面
     this.setData({
-      packet_id: options.id ||3
+      packet_id: options.id
     });
     /**
      * 判断用户是否登录，避免在从红包转发入口进入时，领取红包缺少此用户的登录信息openid等
@@ -59,7 +59,6 @@ Page({
     qcloud.login({
       method: 'POST',
       success(result) {
-        console.log(result)
         if (result) {
           that.setData({
             userInfo: wx.getStorageSync("userinfo")
@@ -68,8 +67,8 @@ Page({
           that.getData();
         } 
       },
-
       fail(error) {
+        wx.hideLoading();
         util.showModel('登录失败', error)
       }
     })
@@ -138,7 +137,7 @@ Page({
               console.log(res);
               wx.hideLoading();
               if (res.data.status == "1") {
-                util.showModel("获取个人抢取信息失败", res.data);
+                util.showModel("提示", res.data.msg);
               } else {
                 if (res.data.data.pageList && res.data.data.pageList.length != 0) {
                   that.setData({
@@ -162,14 +161,14 @@ Page({
               }
             },
             fail: function () {
-              util.showModel("服务器错误", res.data);
+              util.showModel("提示", res.data.msg);
             }
           })
         }
       },
       fail: function () {
         wx.hideLoading();
-        console.log("redpacket fail");
+        console.log("接口请求失败");
       }
     });
   },
@@ -195,7 +194,6 @@ Page({
         for (var key in res.shareTickets) {
           console.log("key =" + key + "  value =" + res.shareTickets[key])
         }
-        util.showSuccess("转发成功");
       },
       fail: function (res) {
         // 转发失败
@@ -230,9 +228,6 @@ Page({
   distributeRedPacket: function (event) {
     wx: wx.reLaunch({
       url: '/pages/home/home',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
     })
   },
 
@@ -361,7 +356,6 @@ Page({
         console.log(data);
         if (typeof data === 'string') {
           data = JSON.parse(data);
-          // res = JSON.parse(res.data)
         }
         //console.log(data);
         if (data.status != "0") {
@@ -370,7 +364,7 @@ Page({
           that.setData({
             flag: false
           })
-          util.showModel('语音上传失败', data.data.message);
+          util.showModel('提示',data.msg);
           return;
         } else {
           wx.request({
@@ -392,7 +386,6 @@ Page({
               console.log(res)
               if(res.data.status == "0"){
                 wx.hideLoading();
-                util.showTip('领取成功');
                 that.setData({
                   flag: false
                 })
@@ -401,18 +394,25 @@ Page({
                 })
                 that.getData();   //刷新数据
               }else{
-                wx.hideLoading();
-                that.setData({
-                  flag: false
-                })
-                that.setData({
-                  error:true
-                })
-                setTimeout(function(){
+                if (res.data.code == "4001" || res.data.code=="4003"){//表示红包已经被抢完
+                  util.showTip("此红包已被抢完");
+                  setTimeout(function () {
+                    that.getData
+                  }, 1500)     
+                }else{
+                  wx.hideLoading();
                   that.setData({
-                    error: false
+                    flag: false
                   })
-                },2000)              
+                  that.setData({
+                    error: true
+                  })
+                  setTimeout(function () {
+                    that.setData({
+                      error: false
+                    })
+                  }, 2000)              
+                }
               }
             }
           })
@@ -421,7 +421,7 @@ Page({
       fail: function (e) {
         console.error(e);
         wx.hideLoading();
-        util.showModel('语音识别失败', e);
+        util.showModel('提示', e);
       }
     });
   },

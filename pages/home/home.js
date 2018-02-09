@@ -393,12 +393,12 @@ Page({
               'paySign': options.paySign,
               'success': function (res) {
                 that.setData({
-                  account:0.00,
+                  account:"0.00",
                   command:"",
                   money:"",
                   num:"",
                   paying: false,
-                  balance:0.00
+                  balance:"0.00"
                 })
                 wx.showLoading({
                   title: '请稍后',
@@ -437,13 +437,15 @@ Page({
             })
           }else{
             that.setData({
-              account: (that.data.account - that.data.money).toFixed(2),
-              balance: (that.data.account - that.data.money).toFixed(2),
+              account: (that.data.account - parseFloat(that.data.money)).toFixed(2),
+              balance: (that.data.account - parseFloat(that.data.money)).toFixed(2),
               paying: false,
               command: "",
               money: "",
               num: "",
             })
+            console.log(that.data.userInfo.avatarUrl)
+            console.log(command)
             wx.navigateTo({
               url: '/pages/share/share?avatar=' + that.data.userInfo.avatarUrl + '&command=' +command + '&id=' + id,
             })
@@ -459,7 +461,7 @@ Page({
         that.setData({
           paying: false
         })
-        util.showModel("失败");
+        util.showModel("失败",e);
       }     
     })
   },

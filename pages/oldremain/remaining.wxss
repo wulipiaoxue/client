@@ -179,13 +179,13 @@
 }
 .page-tip{
   width:632rpx;
-  height:820rpx;
   background-color: #fffaf6;
   position: absolute;
   top:42%;
   left:50%;
   transform: translate(-50%,-50%);
   border-radius: 10rpx;
+  padding-bottom:40rpx;
 }
 .page-tip image{
   width:100%;
@@ -224,17 +224,12 @@
   margin:30rpx auto;
 }
 .back-submit{
-  border-radius: 60rpx;
-  width: 484rpx;
-  height: 84rpx;
-  border:8rpx solid #ffd5a5;
-  text-align: center;
-  background-color: #f02d19;
-  color: #ffd5a5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 30rpx 4rpx rgba(112,1,5,0.2);
-  font-size: 30rpx;
-  margin:-15rpx auto;
+  position: absolute;
+  bottom:-114rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.back-submit image{
+  width:64rpx;
+  height:64rpx;
 }
