@@ -13,7 +13,7 @@ const innerAudioContext = wx.createInnerAudioContext();
 // 是否有文件正在播放
 let isPlayingVoice = false;
 // 正在播放的文件索引
-let playingVoiceIndex = 0;
+let playingVoiceIndex = 
 Page({
   data: {
     userInfo: {},

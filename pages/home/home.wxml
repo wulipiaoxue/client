@@ -1,5 +1,4 @@
 <view class='home-container'>
-  <form bindsubmit="formSubmit" bindreset="formReset">
   <view class='home-content'>
     <view class="card-head">
       <view class="image-box">
@@ -31,9 +30,8 @@
 
       生成语音口令
     </view> -->
-    <button formType="submit" class='bt-submit'>{{btnTxt}}</button>
+    <view bindtap='formSubmit' class='bt-submit'>{{btnTxt}}</view>
   </view>
-  </form>
   <view  wx:if="{{imgUrl}}" class="advert" catchtap='intoChtfund'>
     <image  src="{{imgUrl}}"></image>
   </view> 

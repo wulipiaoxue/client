@@ -17,6 +17,7 @@ Page({
     account:"0.00", //账户余额
     btnTxt:"生成语音口令",
     paying:false,
+    command:'',
   },
   onLoad:function(options){
     var that=this;
@@ -303,24 +304,26 @@ Page({
     }
     var rep = /^[\u4E00-\u9FA5]+$/;
     console.log(e.detail);
-    if (!e.detail.value["command"]){
-      e.detail.value["command"] = that.data.cmdConfig;
+    if (!that.data.command){
+      var command = that.data.cmdConfig;
+    }else{
+      var command = that.data.command;
     }
-    if (!rep.test(e.detail.value["command"])) {
+    if (!rep.test(command)) {
       util.showTip('请输入中文字符')
       that.setData({
         paying: false
       })
       return
     }
-    if (!e.detail.value["reward"]){
+    if (!that.data.money){
       util.showTip('请输入赏金金额')
       that.setData({
         paying: false
       })
       return
     }
-    if (!e.detail.value["qty"]){
+    if (!that.data.num){
       util.showTip('请输入1-10000的数量')
       that.setData({
         paying: false
@@ -359,9 +362,9 @@ Page({
         "hmac":"",
         "params":{
           "wx3rdSession": wx.getStorageSync("wx3rdSession"),
-          "commond": e.detail.value.command,
-          "total": util.sendNum(e.detail.value.reward),
-          "number": e.detail.value.qty,
+          "commond": command,
+          "total": util.sendNum(that.data.money),
+          "number": that.data.num,
         }
       },
       header: {
@@ -372,9 +375,11 @@ Page({
       success:function(res){
         console.log(res);
         console.log(that.data.account)
-        console.log(e.detail.value.reward)
+        console.log(that.data.money)
         if(res.data.status == "0"){
           var id = res.data.data.folderid; //红包id
+          console.log(id);
+          console.log(res.data.data);
           wx.hideToast();
           if (res.data.data.needPay=="1"){
             var options = res.data.data
@@ -416,16 +421,16 @@ Page({
                     wx.hideLoading();
                     //进去到红包分享页面
                     wx.navigateTo({
-                      url: '/pages/share/share?avatar=' + that.data.userInfo.avatarUrl + '&command=' + e.detail.value.command + '&id=' + id,
+                      url: '/pages/share/share?avatar=' + that.data.userInfo.avatarUrl + '&command=' + command + '&id=' + id,
                     })
                   }
                 })
               },
               'fail': function (res) {
+                console.log(res)
                 that.setData({
                   paying: false
                 })
-                util.showModel('提示', res);
               }
             })
           }else{
